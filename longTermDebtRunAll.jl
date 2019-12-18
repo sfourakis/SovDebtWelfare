@@ -40,11 +40,11 @@ LTBSpecCE=longTermBondSpec(betaCE,thetaCE,gammaCE,hPen0CE,hPen1CE,RCE,lambdaCE,c
 #A low iteration Test to make sure everything is working properly
 LTBEvalCE=makeEval(LTBSpecCE)
 GC.gc()
-@time vfiGOneStep!(LTBSpecCE,LTBEvalCE,1e-6,10)
+@time vfiGOneStep!(LTBSpecCE,LTBEvalCE,1e-10,10)
 
 LTBEvalCE=makeEval(LTBSpecCE)
 GC.gc()
-@time vfiGOneStep!(LTBSpecCE,LTBEvalCE,1e-6,2000)
+@time vfiGOneStep!(LTBSpecCE,LTBEvalCE,1e-10,2000)
 
 
 @time LTBPolCE=makeMeanPolicies(LTBSpecCE,LTBEvalCE)
@@ -58,7 +58,7 @@ penMultCBoundsCE=[0.0,1.0]
 penMultCPointsCE=2
 welfareRangeParamsCE=welfareRangeParams(betaCBoundsCE,betaCPointsCE,gammaBoundsCE,gammaPointsCE,penMultCBoundsCE,penMultCPointsCE,true,true,true,true)
 
-@time welfareResAllCE=getWelfareRange(LTBSpecCE,LTBEvalCE,welfareRangeParamsCE,true,1e-6,100000)
+@time welfareResAllCE=getWelfareRange(LTBSpecCE,LTBEvalCE,welfareRangeParamsCE,true,1e-10,100000)
 
 welfareResPenUseGCE,welfareResPenUseCCE,welfareResNoPenUseGCE,welfareResNoPenUseCCE=splitWelfareResults(welfareResAllCE)
 
@@ -71,7 +71,7 @@ wGNoPenSpecCE=debtWelfareSpec(betaCE,gammaCE,0.0,false,false,betaCE)
 wGNoPenEvalCE=makeWelfareEval(LTBSpecCE,wGNoPenSpecCE,LTBEvalCE)
 
 
-estimateWelfare!(LTBSpecCE,wGNoPenSpecCE,LTBEvalCE,wGNoPenEvalCE,1e-6,5000)
+estimateWelfare!(LTBSpecCE,wGNoPenSpecCE,LTBEvalCE,wGNoPenEvalCE,1e-10,5000)
 
 lambdaDDecompResultsCE=decomposeLambdaD(LTBSpecCE,LTBEvalCE,welfareResPenUseCCE,welfareResNoPenUseCCE,welfareResPenUseGCE,welfareResNoPenUseGCE,wGNoPenEvalCE,0.0,1000)
 
@@ -99,7 +99,7 @@ LTBSpecAr=longTermBondSpec(betaAr,thetaAr,gammaAr,hPen0Ar,hPen1Ar,RAr,lambdaAr,c
 
 LTBEvalAr=makeEval(LTBSpecAr)
 GC.gc()
-@time vfiGOneStep!(LTBSpecAr,LTBEvalAr,1e-6,2000)
+@time vfiGOneStep!(LTBSpecAr,LTBEvalAr,1e-10,2000)
 
 @time LTBPolAr=makeMeanPolicies(LTBSpecAr,LTBEvalAr)
 @time LTBPathsAr,APCheckAr,APDivYCheckAr=simulatePaths(LTBSpecAr,LTBEvalAr,LTBPolAr,0.0,1000,1000)
@@ -114,7 +114,7 @@ penMultCBoundsAr=[0.0,1.0]
 penMultCPointsAr=2
 welfareRangeParamsAr=welfareRangeParams(betaCBoundsAr,betaCPointsAr,gammaBoundsAr,gammaPointsAr,penMultCBoundsAr,penMultCPointsAr,true,true,false,true)
 
-@time welfareResAllAr=getWelfareRange(LTBSpecAr,LTBEvalAr,welfareRangeParamsAr,true,1e-6,100000)
+@time welfareResAllAr=getWelfareRange(LTBSpecAr,LTBEvalAr,welfareRangeParamsAr,true,1e-10,100000)
 
 welfareResPenUseCAr,welfareResNoPenUseCAr=splitWelfareResults(welfareResAllAr)
 
@@ -143,7 +143,7 @@ LTBSpecAG=longTermBondSpec(betaAG,thetaAG,gammaAG,hPen0AG,hPen1AG,RAG,lambdaAG,c
 
 LTBEvalAG=makeEval(LTBSpecAG)
 GC.gc()
-@time vfiGOneStep!(LTBSpecAG,LTBEvalAG,1e-6,2000)
+@time vfiGOneStep!(LTBSpecAG,LTBEvalAG,1e-10,2000)
 
 
 @time LTBPolAG=makeMeanPolicies(LTBSpecAG,LTBEvalAG)
@@ -159,7 +159,7 @@ penMultCBoundsAG=[0.0,1.0]
 penMultCPointsAG=2
 welfareRangeParamsAG=welfareRangeParams(betaCBoundsAG,betaCPointsAG,gammaBoundsAG,gammaPointsAG,penMultCBoundsAG,penMultCPointsAG,true,true,false,true)
 
-@time welfareResAllAG=getWelfareRange(LTBSpecAG,LTBEvalAG,welfareRangeParamsAG,true,1e-6,100000)
+@time welfareResAllAG=getWelfareRange(LTBSpecAG,LTBEvalAG,welfareRangeParamsAG,true,1e-10,100000)
 
 welfareResPenUseCAG,welfareResNoPenUseCAG=splitWelfareResults(welfareResAllAG)
 
