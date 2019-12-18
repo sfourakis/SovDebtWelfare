@@ -152,7 +152,7 @@ GC.gc()
 
 
 betaCBoundsAG=[0.7,0.999]
-betaCPointsAG=299
+betaCPointsAG=300
 gammaBoundsAG=[2.0,2.0]
 gammaPointsAG=1
 penMultCBoundsAG=[0.0,1.0]
