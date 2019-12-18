@@ -16,3 +16,5 @@ The files are:
 4. LongTermDebtRunAll.jl: solves the models, produces related objects, and produces and writes to disk the welfare decompositions used in the paper.
 
 Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to change.
+
+These codes should run without error in any version Julia newer than v1.0. Results used in the paper were computed in Julia v1.2.0.
