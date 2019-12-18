@@ -98,7 +98,7 @@ LTBSpecAr=longTermBondSpec(betaAr,thetaAr,gammaAr,hPen0Ar,hPen1Ar,RAr,lambdaAr,c
 
 
 LTBEvalAr=makeEval(LTBSpecAr)
-@everywhere gc()
+GC.gc()
 @time vfiGOneStep!(LTBSpecAr,LTBEvalAr,1e-6,2000)
 
 @time LTBPolAr=makeMeanPolicies(LTBSpecAr,LTBEvalAr)
@@ -142,7 +142,7 @@ LTBSpecAG=longTermBondSpec(betaAG,thetaAG,gammaAG,hPen0AG,hPen1AG,RAG,lambdaAG,c
 
 
 LTBEvalAG=makeEval(LTBSpecAG)
-@everywhere gc()
+GC.gc()
 @time vfiGOneStep!(LTBSpecAG,LTBEvalAG,1e-6,2000)
 
 
