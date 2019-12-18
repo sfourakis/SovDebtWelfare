@@ -167,8 +167,8 @@ decompResultsAG=decomposeWelfareBeta(LTBSpecAG,LTBEvalAG,welfareResPenUseCAG,wel
 
 
 
-writecsv("C:\\Users\\Stelios Fourakis\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\CEBenchmark12_welfareGainDecomposition.csv",testDecompResultsCE)
-writecsv("C:\\Users\\Stelios Fourakis\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\ArBenchmark08_welfareGainDecomposition.csv",testDecompResultsAr)
-writecsv("C:\\Users\\Stelios Fourakis\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\AGTransitory06_welfareGainDecomposition.csv",testDecompResultsAG)
+writecsv("C:\\Users\\steliosf\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\CEBenchmark12_welfareGainDecomposition.csv",decompResultsCE)
+writecsv("C:\\Users\\steliosf\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\ArBenchmark08_welfareGainDecomposition.csv",decompResultsAr)
+writecsv("C:\\Users\\steliosf\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\AGTransitory06_welfareGainDecomposition.csv",decompResultsAG)
 
-writecsv("C:\\Users\\Stelios Fourakis\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\CEBenchmark12_lambdaDDecomposition.csv",testLambdaDDecompResultsCE)
+writecsv("C:\\Users\\steliosf\\Documents\\GitHub\\SovDebtWelfare\\AllModelResults\\CEBenchmark12_lambdaDDecomposition.csv",lambdaDDecompResultsCE)
