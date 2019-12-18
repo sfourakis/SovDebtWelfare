@@ -15,4 +15,4 @@ The files are:
 3. LongTermDebt_WelfareMethods.jl: contains structures, setup, and computation methods for 2., 4., 5., and 6. above;
 4. LongTermDebtRunAll.jl: solves the models, produces related objects, and produces and writes to disk the welfare decompositions used in the paper.
 
-Comments in files 2-4 are sparse, may be inaccurate/obsolete, and subject to change.
+Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to change.
