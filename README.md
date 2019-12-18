@@ -30,7 +30,7 @@ The columns of the first 3 files contain:
 
 The columns of the last files contains:
 1. beta=the consumer's discount factor;
-2. (1+lambdaH_D)=(E\[V_H(s,0)]/E\[V_H^ND(s,0)])^(1/(1-gamma))
+2. (1+lambdaH_D)=(E\[V_H(s,0)]/E\[V_H^ND(s,0)])^(1/(1-gamma)) (=(1_lambda_D) above)
 3. (1+lambdaHHat_D)=(E\[VHat_H(s,0)]/E\[VHat_H^ND(s,0)])^(1/(1-gamma))
 4. (1+lambdaG_D)=(E\[V_G(s,0)]/E\[V_G^ND(s,0)])^(1/(1-gamma)) (invariant to consumer beta)
 5. (1+lambdaH_D)/(1+lambdaHHat_D)
