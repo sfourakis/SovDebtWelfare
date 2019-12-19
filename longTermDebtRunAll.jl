@@ -11,6 +11,9 @@ include("LongTermDebt_WelfareMethods.jl")
 aBounds = [-1.0, 0.0]
 aPoints = 200  # 350
 
+# beta grid
+beta_points = 50
+
 # output process
 yPoints = 100 # 200
 rho = 0.948503
@@ -19,7 +22,7 @@ mu = 0.0
 stdSpan = 3.0
 inflateEndpoints = false
 
-# m shock parameters
+# m shock parameterss
 mPoints = 12
 epsilon2 = 0.003^2
 mMu = 0.0
@@ -53,7 +56,7 @@ mixFacQCE = 0.5
 mixFacVCE = 0.5
 
 betaCBoundsCE = [0.9, 0.999]
-betaCPointsCE = 20   # 199
+betaCPointsCE = beta_points 
 gammaBoundsCE = [2.0, 2.0]
 gammaPointsCE = 1
 penMultCBoundsCE = [0.0, 1.0]
@@ -160,7 +163,7 @@ mixFacQAr = 0.5
 mixFacVAr = 0.5
 
 betaCBoundsAr = [0.9, 0.999]
-betaCPointsAr = 20 # 199
+betaCPointsAr = beta_points 
 gammaBoundsAr = [2.0, 2.0]
 gammaPointsAr = 1
 penMultCBoundsAr = [0.0, 1.0]
@@ -248,7 +251,7 @@ mixFacQAG = 0.5
 mixFacVAG = 0.5
 
 betaCBoundsAG = [0.7, 0.999]
-betaCPointsAG = 20 # 300
+betaCPointsAG = beta_points 
 gammaBoundsAG = [2.0, 2.0]
 gammaPointsAG = 1
 penMultCBoundsAG = [0.0, 1.0]
@@ -310,7 +313,7 @@ decompResultsAG = decomposeWelfareBeta(
 )
 
 println("")
-println("Savings the output..")
+println("Savings the outpsut..")
 
 writecsv(
     joinpath("OUTPUT", "CSV", "CEBenchmark12_welfareGainDecomposition.csv"),
