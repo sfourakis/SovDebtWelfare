@@ -52,6 +52,14 @@ simplePenCE = false
 mixFacQCE = 0.5
 mixFacVCE = 0.5
 
+betaCBoundsCE = [0.9, 0.999]
+betaCPointsCE = 20   # 199
+gammaBoundsCE = [2.0, 2.0]
+gammaPointsCE = 1
+penMultCBoundsCE = [0.0, 1.0]
+penMultCPointsCE = 2
+
+# computations 
 LTBSpecCE = longTermBondSpec(
     betaCE,
     thetaCE,
@@ -83,12 +91,6 @@ GC.gc()
 @time LTBPathsCE, APCheckCE, APDivYCheckCE =
     simulatePaths(LTBSpecCE, LTBEvalCE, LTBPolCE, 0.0, 1000, 1000)
 
-betaCBoundsCE = [0.9, 0.999]
-betaCPointsCE = 20   # 199
-gammaBoundsCE = [2.0, 2.0]
-gammaPointsCE = 1
-penMultCBoundsCE = [0.0, 1.0]
-penMultCPointsCE = 2
 welfareRangeParamsCE = welfareRangeParams(
     betaCBoundsCE,
     betaCPointsCE,
@@ -162,6 +164,13 @@ simplePenAr = true
 mixFacQAr = 0.5
 mixFacVAr = 0.5
 
+betaCBoundsAr = [0.9, 0.999]
+betaCPointsAr = 20 # 199
+gammaBoundsAr = [2.0, 2.0]
+gammaPointsAr = 1
+penMultCBoundsAr = [0.0, 1.0]
+penMultCPointsAr = 2
+
 LTBSpecAr = longTermBondSpec(
     betaAr,
     thetaAr,
@@ -180,6 +189,7 @@ LTBSpecAr = longTermBondSpec(
     mixFacVAr,
 )
 
+# computations 
 LTBEvalAr = makeEval(LTBSpecAr)
 GC.gc()
 @time vfiGOneStep!(LTBSpecAr, LTBEvalAr, 1e-10, 2000)
@@ -188,12 +198,6 @@ GC.gc()
 @time LTBPathsAr, APCheckAr, APDivYCheckAr =
     simulatePaths(LTBSpecAr, LTBEvalAr, LTBPolAr, 0.0, 1000, 1000)
 
-betaCBoundsAr = [0.9, 0.999]
-betaCPointsAr = 20 # 199
-gammaBoundsAr = [2.0, 2.0]
-gammaPointsAr = 1
-penMultCBoundsAr = [0.0, 1.0]
-penMultCPointsAr = 2
 welfareRangeParamsAr = welfareRangeParams(
     betaCBoundsAr,
     betaCPointsAr,
@@ -248,6 +252,14 @@ simplePenAG = false
 mixFacQAG = 0.5
 mixFacVAG = 0.5
 
+betaCBoundsAG = [0.7, 0.999]
+betaCPointsAG = 20 # 300
+gammaBoundsAG = [2.0, 2.0]
+gammaPointsAG = 1
+penMultCBoundsAG = [0.0, 1.0]
+penMultCPointsAG = 2
+
+# computations 
 LTBSpecAG = longTermBondSpec(
     betaAG,
     thetaAG,
@@ -274,12 +286,6 @@ GC.gc()
 @time LTBPathsAG, APCheckAG, APDivYCheckAG =
     simulatePaths(LTBSpecAG, LTBEvalAG, LTBPolAG, 0.0, 1000, 1000)
 
-betaCBoundsAG = [0.7, 0.999]
-betaCPointsAG = 20 # 300
-gammaBoundsAG = [2.0, 2.0]
-gammaPointsAG = 1
-penMultCBoundsAG = [0.0, 1.0]
-penMultCPointsAG = 2
 welfareRangeParamsAG = welfareRangeParams(
     betaCBoundsAG,
     betaCPointsAG,
