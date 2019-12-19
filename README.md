@@ -65,6 +65,7 @@ File 4 generates the following output files
 2. ArBenchmark08_welfareGainDecomposition.csv
 3. AGTransitory06_welfareGainDecomposition.csv
 4. CEBenchmark12_lambdaDDecomposition.csv
+5. asset_over_Y_limit_ND.csv
 
 The columns of the first 3 files contain:
 
@@ -77,7 +78,7 @@ The columns of the first 3 files contain:
 5. (1+lambda_T)=the part of (1+lambda) due purely to the government's choice of
    time path for consumption.
 
-The columns of the last files contains:
+The columns of the fourth file contains:
 
 1. beta=the consumer's discount factor;
 2. (1+lambdaH_D)=(E\[V_H(s,0)]/E\[V_H^ND(s,0)])^(1/(1-gamma)) (=(1_lambda_D)
@@ -95,6 +96,10 @@ default costs (with default costs); and VHat_H (VHat_H^ND) denotes the value
 function computed using the consumer's discount factor until the first period of
 default and the government's discount factor in that period and thereafter with
 default costs (with default costs).
+
+The columns of the last file contains the asset limits conditional on no default 
+for the CE2012, Ar2008, and AG2006 models respectively. This is used to generate
+the benchmark comparison in the figures. 
 
 Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to
 change.
