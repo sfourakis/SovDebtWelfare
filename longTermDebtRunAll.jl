@@ -78,11 +78,6 @@ LTBSpecCE = longTermBondSpec(
     mixFacVCE,
 )
 
-#A low iteration Test to make sure everything is working properly
-LTBEvalCE = makeEval(LTBSpecCE)
-GC.gc()
-@time vfiGOneStep!(LTBSpecCE, LTBEvalCE, 1e-10, 10)
-
 LTBEvalCE = makeEval(LTBSpecCE)
 GC.gc()
 @time vfiGOneStep!(LTBSpecCE, LTBEvalCE, 1e-10, 2000)
