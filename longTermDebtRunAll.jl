@@ -5,6 +5,32 @@ include("LongTermDebt_PoliciesMethods.jl")
 include("LongTermDebt_WelfareMethods.jl")
 
 ################################################################################
+# Initializing values that are constant across all simulations 
+
+# asset grid 
+aBounds = [-1.0, 0.0]
+aPoints = 200  # 350
+
+# output process
+yPoints = 100 # 200 
+rho = 0.948503
+eta2 = 0.027092^2
+mu = 0.0
+stdSpan = 3.0
+inflateEndpoints = false
+
+# m shock parameters
+mPoints = 12
+epsilon2 = 0.003^2
+mMu = 0.0
+mStdSpan = 2.0
+
+# output and m structs 
+yParams = ar1Params(yPoints, rho, eta2, mu, stdSpan, inflateEndpoints)
+mParams = iidParams(mPoints, epsilon2, mMu, mStdSpan)
+
+
+################################################################################
 # Chatterjee and Eyigungor (2012)
 # The following are exactly the parameters of Chatterjee and Eyigungor (2012)
 
@@ -21,29 +47,10 @@ hPen1CE = 0.2455843389
 RCE = 1.01
 lambdaCE = 0.05
 coupCE = 0.03
-aBoundsCE = [-1.0, 0.0]
-aPointsCE = 350
 
 simplePenCE = false
 mixFacQCE = 0.5
 mixFacVCE = 0.5
-
-# output process
-yPointsCE = 200
-rhoCE = 0.948503
-eta2CE = 0.027092^2
-muCE = 0.0
-stdSpanCE = 3.0
-inflateEndpointsCE = false
-
-# m shock parameters
-mPointsCE = 12
-epsilon2CE = 0.003^2
-mMuCE = 0.0
-mStdSpanCE = 2.0
-
-yParamsCE = ar1Params(yPointsCE, rhoCE, eta2CE, muCE, stdSpanCE, inflateEndpointsCE)
-mParamsCE = iidParams(mPointsCE, epsilon2CE, mMuCE, mStdSpanCE)
 
 LTBSpecCE = longTermBondSpec(
     betaCE,
@@ -54,10 +61,10 @@ LTBSpecCE = longTermBondSpec(
     RCE,
     lambdaCE,
     coupCE,
-    aBoundsCE,
-    aPointsCE,
-    yParamsCE,
-    mParamsCE,
+    aBounds,
+    aPoints,
+    yParams,
+    mParams,
     simplePenCE,
     mixFacQCE,
     mixFacVCE,
@@ -77,7 +84,7 @@ GC.gc()
     simulatePaths(LTBSpecCE, LTBEvalCE, LTBPolCE, 0.0, 1000, 1000)
 
 betaCBoundsCE = [0.9, 0.999]
-betaCPointsCE = 199
+betaCPointsCE = 20   # 199
 gammaBoundsCE = [2.0, 2.0]
 gammaPointsCE = 1
 penMultCBoundsCE = [0.0, 1.0]
@@ -150,8 +157,6 @@ hPen1Ar = 0.0
 RAr = 1.017
 lambdaAr = 1.0
 coupAr = 0.03
-aBoundsAr = [-1.0, 0.0]
-aPointsAr = 350
 
 simplePenAr = true
 mixFacQAr = 0.5
@@ -166,10 +171,10 @@ LTBSpecAr = longTermBondSpec(
     RAr,
     lambdaAr,
     coupAr,
-    aBoundsAr,
-    aPointsAr,
-    yParamsCE,
-    mParamsCE,
+    aBounds,
+    aPoints,
+    yParams,
+    mParams,
     simplePenAr,
     mixFacQAr,
     mixFacVAr,
@@ -184,7 +189,7 @@ GC.gc()
     simulatePaths(LTBSpecAr, LTBEvalAr, LTBPolAr, 0.0, 1000, 1000)
 
 betaCBoundsAr = [0.9, 0.999]
-betaCPointsAr = 199
+betaCPointsAr = 20 # 199
 gammaBoundsAr = [2.0, 2.0]
 gammaPointsAr = 1
 penMultCBoundsAr = [0.0, 1.0]
@@ -238,8 +243,6 @@ hPen1AG = 0.0
 RAG = 1.01
 lambdaAG = 1.0
 coupAG = 0.03
-aBoundsAG = [-1.0, 0.0]
-aPointsAG = 350
 
 simplePenAG = false
 mixFacQAG = 0.5
@@ -254,10 +257,10 @@ LTBSpecAG = longTermBondSpec(
     RAG,
     lambdaAG,
     coupAG,
-    aBoundsAG,
-    aPointsAG,
-    yParamsCE,
-    mParamsCE,
+    aBounds,
+    aPoints,
+    yParams,
+    mParams,
     simplePenAG,
     mixFacQAG,
     mixFacVAG,
@@ -272,7 +275,7 @@ GC.gc()
     simulatePaths(LTBSpecAG, LTBEvalAG, LTBPolAG, 0.0, 1000, 1000)
 
 betaCBoundsAG = [0.7, 0.999]
-betaCPointsAG = 300
+betaCPointsAG = 20 # 300
 gammaBoundsAG = [2.0, 2.0]
 gammaPointsAG = 1
 penMultCBoundsAG = [0.0, 1.0]

@@ -10,6 +10,8 @@ Manuel Amador and Stelios Fourakis
 
 ## The code 
 
+The code does the following: 
+
 1. solves the model of Chatterjee and Eyigungor (2012);
 
 2. generates the ergodic joint distribution of debt, income, and default in that
