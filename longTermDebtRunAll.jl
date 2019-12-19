@@ -8,9 +8,12 @@ include("LongTermDebt_WelfareMethods.jl")
 # Chatterjee and Eyigungor (2012)
 # The following are exactly the parameters of Chatterjee and Eyigungor (2012)
 
+println("")
 println("Computing CE 2012")
+println("")
 
-betaCE = 0.9540232420
+# model parameters
+betaCE = 0.9540232420  
 thetaCE = 0.0385
 gammaCE = 2.0
 hPen0CE = -0.1881927550
@@ -25,6 +28,7 @@ simplePenCE = false
 mixFacQCE = 0.5
 mixFacVCE = 0.5
 
+# output process
 yPointsCE = 200
 rhoCE = 0.948503
 eta2CE = 0.027092^2
@@ -32,6 +36,7 @@ muCE = 0.0
 stdSpanCE = 3.0
 inflateEndpointsCE = false
 
+# m shock parameters
 mPointsCE = 12
 epsilon2CE = 0.003^2
 mMuCE = 0.0
@@ -124,6 +129,7 @@ lambdaDDecompResultsCE = decomposeLambdaD(
     1000,
 )
 
+
 ################################################################################
 # Arellano (2008) 
 #
@@ -135,7 +141,7 @@ println("")
 println("Computing AR 2008")
 println("")
 
-
+# model parameters
 betaAr = 0.95282
 thetaAr = 0.282
 gammaAr = 2.0
@@ -223,6 +229,7 @@ println("")
 println("Computing AG 2006")
 println("")
 
+# model parameters
 betaAG = 0.8
 thetaAG = 0.1
 gammaAG = 2.0
