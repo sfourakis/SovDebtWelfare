@@ -329,8 +329,11 @@ writecsv(
     lambdaDDecompResultsCE,
 )
 writecsv(
-    joinpath("OUTPUT", "CSV", "apDivYNDLimAll.csv"),
-    [LTBPathsCE.assets.apDivY.varNDPath[end],LTBPathsAr.assets.apDivY.varNDPath[end],LTBPathsAG.assets.apDivY.varNDPath[end]],
+    joinpath("OUTPUT", "CSV", "asset_over_Y_limit_ND.csv"),
+    [
+        LTBPathsCE.assets.apDivY.varNDPath[end],
+        LTBPathsAr.assets.apDivY.varNDPath[end],
+        LTBPathsAG.assets.apDivY.varNDPath[end]],
 )
 
 println("Done.")
