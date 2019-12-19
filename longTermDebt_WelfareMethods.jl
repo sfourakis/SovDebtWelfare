@@ -1025,6 +1025,8 @@ end
 
 function decomposeWelfareBeta(m::longTermBondSpec{F,S},s::longTermBondEval{F,S},wPen::welfareResults{F},wNoPen::welfareResults{F},allPaths::meanPaths{F},tol::F,maxIter::S) where{F<:Real,S<:Integer}
     @assert m.gamma!=1
+    @assert minimum(wPen.summaryVals[:,2])==m.gamma
+    @assert maximum(wPen.summaryVals[:,2])==m.gamma
     bigT=length(allPaths.RMassPath)
     ydim=m.yParams.nPoints
     adim=m.aPoints
