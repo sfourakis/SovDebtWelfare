@@ -5,14 +5,14 @@ include("LongTermDebt_PoliciesMethods.jl")
 include("LongTermDebt_WelfareMethods.jl")
 
 ################################################################################
-# Initializing values that are constant across all simulations 
+# Initializing values that are constant across all simulations
 
-# asset grid 
+# asset grid
 aBounds = [-1.0, 0.0]
 aPoints = 200  # 350
 
 # output process
-yPoints = 100 # 200 
+yPoints = 100 # 200
 rho = 0.948503
 eta2 = 0.027092^2
 mu = 0.0
@@ -25,7 +25,7 @@ epsilon2 = 0.003^2
 mMu = 0.0
 mStdSpan = 2.0
 
-# output and m structs 
+# output and m structs
 yParams = ar1Params(yPoints, rho, eta2, mu, stdSpan, inflateEndpoints)
 mParams = iidParams(mPoints, epsilon2, mMu, mStdSpan)
 
@@ -39,7 +39,7 @@ println("Computing CE 2012")
 println("")
 
 # model parameters
-betaCE = 0.9540232420  
+betaCE = 0.9540232420
 thetaCE = 0.0385
 gammaCE = 2.0
 hPen0CE = -0.1881927550
@@ -59,7 +59,7 @@ gammaPointsCE = 1
 penMultCBoundsCE = [0.0, 1.0]
 penMultCPointsCE = 2
 
-# computations 
+# computations
 LTBSpecCE = longTermBondSpec(
     betaCE,
     thetaCE,
@@ -135,7 +135,7 @@ lambdaDDecompResultsCE = decomposeLambdaD(
 
 
 ################################################################################
-# Arellano (2008) 
+# Arellano (2008)
 #
 # The following are exactly the parameters of Arellano (2008)
 # except for the m shock, which is set to be identical to the one in Chatterjee
@@ -184,7 +184,7 @@ LTBSpecAr = longTermBondSpec(
     mixFacVAr,
 )
 
-# computations 
+# computations
 LTBEvalAr = makeEval(LTBSpecAr)
 GC.gc()
 @time vfiGOneStep!(LTBSpecAr, LTBEvalAr, 1e-10, 2000)
@@ -223,7 +223,7 @@ decompResultsAr = decomposeWelfareBeta(
 
 
 ################################################################################
-# Aguiar-Gopinath (2006) 
+# Aguiar-Gopinath (2006)
 #
 # The following are exactly the parameters of Aguiar-Gopinath (2008)
 # except for the m shock, which is set to be identical to the one in Chatterjee
@@ -254,7 +254,7 @@ gammaPointsAG = 1
 penMultCBoundsAG = [0.0, 1.0]
 penMultCPointsAG = 2
 
-# computations 
+# computations
 LTBSpecAG = longTermBondSpec(
     betaAG,
     thetaAG,
@@ -327,6 +327,10 @@ writecsv(
 writecsv(
     joinpath("OUTPUT", "CSV", "CEBenchmark12_lambdaDDecomposition.csv"),
     lambdaDDecompResultsCE,
+)
+writecsv(
+    joinpath("OUTPUT", "CSV", "apDivYNDLimAll.csv"),
+    [LTBPathsCE.assets.apDivY.varNDPath[end],LTBPathsAr.assets.apDivY.varNDPath[end],LTBPathsAG.assets.apDivY.varNDPath[end]],
 )
 
 println("Done.")
