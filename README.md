@@ -114,7 +114,7 @@ The columns of the sixth file contain:
 2. the discount factor of a consumer who is on average indifferent between autarky and openness (starting with 0 debt);
 3. the consumer's autarky expected value under the ergodic distribution of income (V^A);
 4. the consumer's expected value of openness (starting with 0 debt) under the ergodic distribution of income (V_0);
-5. (V_0/V^A)^(1/(1-gamma));
+5. (V_A/V^0)^(1/(1-gamma));
 6. the mass in default under the stationary joint distribution of income, debt, and default;
 7. the average value of a'/(y+m) conditional on repayment under the joint distribution of income, debt, and default.
 
