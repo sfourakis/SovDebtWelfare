@@ -64,6 +64,9 @@ Results used in the paper were computed in Julia v1.2.0.
 6. *generate_figures.ipynb*: Jupyter notebook that uses the generated csv files
    to make the figures. (uses Python)
 
+Comments in files 2-5 are sparse, may be inaccurate/obsolete, and are subject to
+change.
+
 ## Outputs
 
 File 5 generates the following output files in the OUTPUT/CSV directory:
@@ -111,6 +114,4 @@ The columns of the sixth file contain:
 6. the mass in default under the stationary joint distribution of income, debt, and default;
 7. the average value of a'/(y+m) conditional on repayment under the joint distribution of income, debt, and default.
 
-Comments in files 2-5 are sparse, may be inaccurate/obsolete, and are subject to
-change.
 
