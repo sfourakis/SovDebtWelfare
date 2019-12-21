@@ -52,16 +52,21 @@ Results used in the paper were computed in Julia v1.2.0.
 3. *LongTermDebt_WelfareMethods.jl*: contains structures, setup, and computation
    methods for 2., 4., 5., and 6. above.
 
-4. *LongTermDebtRunAll.jl*: solves the models, produces related objects, and
+4. *longTermDebt_IndiffBetaMethods.jl*: contains methods for solving the model
+   for a range of government discount factors and searching for the consumer
+   discount factor which makes the consumer indifferent between autarky and
+   openness.
+
+5. *LongTermDebtRunAll.jl*: solves the models, produces related objects, and
    produces and writes to disk (OUTPUT/CSV) the welfare decompositions used in
    the paper.
 
-5. *generate_figures.ipynb*: Jupyter notebook that uses the generated csv files
+6. *generate_figures.ipynb*: Jupyter notebook that uses the generated csv files
    to make the figures. (uses Python)
 
 ## Outputs
 
-File 4 generates the following output files in the OUTPUT/CSV directory:
+File 5 generates the following output files in the OUTPUT/CSV directory:
 
 1. CEBenchmark12_welfareGainDecomposition.csv
 2. ArBenchmark08_welfareGainDecomposition.csv
@@ -113,5 +118,5 @@ The columns of the sixth file contain:
 6. the mass in default under the stationary joint distribution of income, debt, and default;
 7. the average value of a'/(y+m) conditional on repayment under the joint distribution of income, debt, and default.
 
-Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to
+Comments in files 2-5 are sparse, may be inaccurate/obsolete, and are subject to
 change.
