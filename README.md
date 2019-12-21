@@ -98,8 +98,6 @@ where V_H (V_H^ND) denotes the value function computed using the consumer's disc
 and VHat_H (VHat_H^ND) denotes the value function computed using the consumer's discount factor until the first period of default
 and the government's discount factor in that period and thereafter with default costs (with default costs).
 
-Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to change.
-
 The rows of the fifth file contain the asset limits conditional on no default 
 for the CE2012, Ar2008, and AG2006 models respectively. This is used to generate
 the benchmark comparison in the figures. 
