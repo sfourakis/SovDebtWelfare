@@ -3,6 +3,7 @@
 include("LongTermDebt_Methods.jl")
 include("LongTermDebt_PoliciesMethods.jl")
 include("LongTermDebt_WelfareMethods.jl")
+include("LongTermDebt_IndiffBetaMethods.jl")
 
 ################################################################################
 # Initializing values that are constant across all simulations
@@ -350,3 +351,4 @@ writecsv(
 )
 
 println("Done.")
+
