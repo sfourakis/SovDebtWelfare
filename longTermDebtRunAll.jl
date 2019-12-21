@@ -56,7 +56,7 @@ mixFacQCE = 0.5
 mixFacVCE = 0.5
 
 betaCBoundsCE = [0.9, 0.999]
-betaCPointsCE = beta_points 
+betaCPointsCE = beta_points
 gammaBoundsCE = [2.0, 2.0]
 gammaPointsCE = 1
 penMultCBoundsCE = [0.0, 1.0]
@@ -136,6 +136,12 @@ lambdaDDecompResultsCE = decomposeLambdaD(
     1000,
 )
 
+betaGBoundsCE=[0.95,0.99]
+betaGPointsCE=21
+
+indiffResultsCE=findBetaIndiffRange(LTBSpecCE,betaGBoundsCE,betaGPointsCE,1e-10,50000,1e-10,100000,1e-10,1e-10,100)
+
+
 
 ################################################################################
 # Arellano (2008)
@@ -163,7 +169,7 @@ mixFacQAr = 0.5
 mixFacVAr = 0.5
 
 betaCBoundsAr = [0.9, 0.999]
-betaCPointsAr = beta_points 
+betaCPointsAr = beta_points
 gammaBoundsAr = [2.0, 2.0]
 gammaPointsAr = 1
 penMultCBoundsAr = [0.0, 1.0]
@@ -251,7 +257,7 @@ mixFacQAG = 0.5
 mixFacVAG = 0.5
 
 betaCBoundsAG = [0.7, 0.999]
-betaCPointsAG = beta_points 
+betaCPointsAG = beta_points
 gammaBoundsAG = [2.0, 2.0]
 gammaPointsAG = 1
 penMultCBoundsAG = [0.0, 1.0]
@@ -337,6 +343,10 @@ writecsv(
         LTBPathsCE.assets.apDivY.varNDPath[end],
         LTBPathsAr.assets.apDivY.varNDPath[end],
         LTBPathsAG.assets.apDivY.varNDPath[end]],
+)
+writecsv(
+    joinpath("OUTPUT", "CSV", "CEBenchmark12_indiffBetaRange.csv"),
+    indiffResultsCE,
 )
 
 println("Done.")
