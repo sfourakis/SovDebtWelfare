@@ -68,6 +68,7 @@ File 4 generates the following output files in the OUTPUT/CSV directory:
 3. AGTransitory06_welfareGainDecomposition.csv
 4. CEBenchmark12_lambdaDDecomposition.csv
 5. asset_over_Y_limit_ND.csv
+6. CEBenchmark12_indiffBetaRange.csv
 
 The columns of the first 3 files contain:
 
@@ -99,9 +100,18 @@ function computed using the consumer's discount factor until the first period of
 default and the government's discount factor in that period and thereafter with
 default costs (with default costs).
 
-The rows of the last file contains the asset limits conditional on no default 
+The rows of the fifth file contain the asset limits conditional on no default 
 for the CE2012, Ar2008, and AG2006 models respectively. This is used to generate
 the benchmark comparison in the figures. 
+
+The columns of the sixth file contain:
+1. the government's discount factor;
+2. the discount factor of a consumer who is on average indifferent between autarky and openness (starting with 0 debt);
+3. the consumer's autarky expected value under the ergodic distribution of income (V^A);
+4. the consumer's expected value of openness (starting with 0 debt) under the ergodic distribution of income (V_0);
+5. (V_0/V^A)^(1/(1-gamma));
+6. the mass in default under the stationary joint distribution of income, debt, and default;
+7. the average value of a'/(y+m) conditional on repayment under the joint distribution of income, debt, and default.
 
 Comments in files 2-4 are sparse, may be inaccurate/obsolete, and are subject to
 change.
