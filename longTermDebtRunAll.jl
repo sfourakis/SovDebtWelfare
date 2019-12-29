@@ -137,11 +137,21 @@ lambdaDDecompResultsCE = decomposeLambdaD(
     1000,
 )
 
-betaGBoundsCE=[0.95,0.99]
-betaGPointsCE=21
+betaGBoundsCE = [0.95,0.99]
+betaGPointsCE = 21
 
-indiffResultsCE=findBetaIndiffRange(LTBSpecCE,betaGBoundsCE,betaGPointsCE,1e-10,50000,1e-10,100000,1e-10,1e-10,100)
-
+indiffResultsCE = findBetaIndiffRange(
+    LTBSpecCE,
+    betaGBoundsCE,
+    betaGPointsCE,
+    1e-10,
+    50000,
+    1e-10,
+    100000,
+    1e-10,
+    1e-10,
+    100
+)
 
 
 ################################################################################
